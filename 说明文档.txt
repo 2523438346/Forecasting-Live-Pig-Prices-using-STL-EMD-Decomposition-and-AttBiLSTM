@@ -1,0 +1,22 @@
+## 按照序号顺序执行代码
+
+# 将basic_data.xlsx与1.STL.py放在同一文件夹下，执行1.STL.py，会生成一个figures文件夹，里面存放着各列数据的分解结果
+
+# 将figures文件夹中的所有的trend数据汇总成一个trend.csv(已提供)
+# 将figures文件夹中的所有的season数据汇总成一个season.csv(已提供)
+# 将figures文件夹中的所有的resid数据汇总成一个resid.csv(已提供)
+
+# 执行2.1ARIMA影响因素预测.py，会以ARIMA模型依次预测除生猪数据之外的其他数据的未来值，存于并生成influence_pred.csv，用于Prophet模型作为影响因素预测生猪数据
+
+# 执行2.2多变量Prophet.py，得到生猪趋势分量的预测结果，存于并生成pred_trend.csv
+
+# 执行3.SARIMA.py，得到生猪季节分类预测结果，存于并生成seasonal_pred.csv
+
+# 执行4.1EMD.py，将剩余分量再次分解，存于并生成IMFs_and_Residue.csv(已提供)
+
+# 执行4.2emd-att-bilstm_notest.py，使用Att-BiLSTM模型训练并预测各IMF分量，在第18行选择要预测的列索引，生成emd_model文件夹，以存放训练好的模型，
+生成emd_pred文件夹，存放各IMF预测的结果
+
+# 执行4.3imf_merge.py，将各IMF预测结果汇总，得到生猪剩余分量预测结果
+
+# 执行5.Final_prediction.py，将各分量预测结果相加，得到最终的生猪价格预测结果，并与真实值进行评价。
